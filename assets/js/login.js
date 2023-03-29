@@ -37,7 +37,7 @@ $(function(){
         e.preventDefault()
         // 发起ajax的post请求
         var data =  {username:$('#form_reg [name=username').val(), password:$('#form_reg [name=password').val()}
-        $.post('http://api-breakingnews-web.itheima.net/api/reguser',data,
+        $.post('/api/reguser',data,
         function(res){
             if(res.status !== 0){
                 return (layer.msg(res.message));
@@ -53,7 +53,7 @@ $(function(){
         e.preventDefault()
 
         $.ajax({
-            url:'http://api-breakingnews-web.itheima.net/api/login',
+            url:'/api/login',
             method:'POST',
             // 快速获取表单数据
             data:$(this).serialize(),
